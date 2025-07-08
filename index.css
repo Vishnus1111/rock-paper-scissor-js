@@ -1,0 +1,274 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8cc461;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.score-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8cc461;
+  border: 2px solid white;
+  border-radius: 18px;
+  padding: 20px 60px;
+  gap: 200px;
+}
+
+.game-title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0.9;
+}
+
+.game-title h1 {
+  margin: 5px 0;
+}
+
+.score-board {
+  display: flex;
+  gap: 20px;
+}
+
+.score-box {
+  background-color: white;
+  color: black;
+  padding: 20px 30px;
+  width: 110px;
+  height: 90px;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.score-box h2 {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.score-box p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.triangle-wrapper {
+  position: relative;
+  width: 330px;
+  height: 300px;
+  margin: auto;
+  margin-top: 20px; /* ⬅️ Increase this from 40px to 100px (or adjust as needed) */
+}
+
+
+.triangle-wrapper img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.stone {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.scissor {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.paper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line {
+  position: absolute;
+  background-color: #3b3b3b;
+  height: 8px;
+  border-radius: 8px;
+}
+
+.line1 {
+  top: 58px;
+  left: 80px;
+  width: 180px;
+  transform: rotate(0deg);
+}
+
+.line2 {
+  top: 2px;
+  /* left: 124px; */
+  bottom: 24px;
+  width: 190px;
+  transform: rotate(60deg);
+  margin: auto;
+  margin-bottom: 132px;
+}
+
+.line3 {
+  top: 210px;
+  left: 180px;
+  width: 160px;
+  transform: rotate(-60deg);
+  transform-origin: top left;
+}
+
+.result-section {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+  gap: 60px;
+}
+
+.choice-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picked {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  z-index: 1;
+  background-color: transparent; /* ✅ remove background white */
+  border-radius: 50%;
+  padding: 0; /* ✅ remove padding if any */
+  box-shadow: none; /* ✅ prevent any default shadows */
+}
+
+
+.result-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.result-text h2 {
+  color: white;
+  font-size: 32px;
+}
+
+.play-again {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.winner-glow {
+  position: relative;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 20px rgba(10, 122, 22, 0.6),
+    0 0 0 40px rgba(18, 156, 31, 0.2),
+    0 0 0 60px rgba(18, 183, 34, 0.1);
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
+
+#next-button {
+  position: fixed;
+  bottom: 40px;
+  right: 140px;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
+
+#rules-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px 20px;
+  background-color: #8cc461;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rules-modal {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+  z-index: 10;
+}
+
+.rules-modal img {
+  width: 300px;
+  height: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.choice {
+  border-radius: 50%;
+  border: none;
+  background-color: transparent; /* Changed from white to transparent */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  box-shadow: none; /* Remove outer shadow */
+  transition: background-color 0.3s ease;
+}

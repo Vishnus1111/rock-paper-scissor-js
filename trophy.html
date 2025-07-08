@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="trophy.css" />
+    <script>
+        function playAgain() {
+            window.location.href = "index.html";
+        }
+    </script>
+    <title>Winner</title>
+</head>
+
+<body>
+    <div class="trophy-page">
+  <img src="./assests/stars.png" alt="Stars" class="stars-image" />
+  <img src="./assests/trophy.png" alt="Trophy" class="trophy-image" /> <br>
+  <h1 class="win-heading">HURRAY!!</h1>
+  <p class="win-subheading">YOU WON THE GAME</p>
+  <button onclick="playAgain()" class="play-again">Play Again</button>
+  <button class="rules-button" onclick="document.getElementById('rules-image').style.display='flex'">RULES</button>
+  <img src="./assests/rules.png" class="rules-modal" id="rules-image" style="display: none;" />
+</div>
+
+    <!-- Rules Modal -->
+    <div id="rules-modal" class="rules-modal">
+        <img src="./assests/rules.png" alt="Rules Poster" />
+        <span id="close-rules" class="close-btn">✖</span>
+    </div>
+
+    <script>
+    function playAgain() {
+        window.location.href = "index.html";
+    }
+
+    function toggleRules() {
+        const rulesImg = document.getElementById('rules-image');
+        rulesImg.style.display = rulesImg.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+
+
+</body>
+
+</html>
