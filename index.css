@@ -64,6 +64,8 @@ body {
   margin: 0;
 }
 
+/* Override removed here; moved to bottom for stronger cascade */
+
 .triangle-wrapper {
   position: relative;
   width: 330px;
@@ -147,6 +149,11 @@ body {
   align-items: center;
 }
 
+/* Make pick labels white */
+.choice-display h3 {
+  color: white;
+}
+
 .picked {
   position: relative;
   width: 150px;
@@ -185,13 +192,21 @@ body {
   cursor: pointer;
 }
 
+/* Apply glow directly to the image so it starts right at the icon edge */
 .winner-glow {
   position: relative;
   border-radius: 50%;
+}
+
+.winner-glow .result-image {
+  border-radius: 50%;
+  /* First ring enlarged to ~1.5x of previous 20px => 30px */
   box-shadow:
-    0 0 0 20px rgba(10, 122, 22, 0.6),
-    0 0 0 40px rgba(18, 156, 31, 0.2),
-    0 0 0 60px rgba(18, 183, 34, 0.1);
+    0 0 0 30px rgba(10, 122, 22, 0.6),
+    0 0 0 50px rgba(18, 156, 31, 0.2),
+    0 0 0 70px rgba(18, 183, 34, 0.1);
+  /* Fill any tiny anti-aliased gap at the icon edge */
+  filter: drop-shadow(0 0 6px rgba(10, 122, 22, 0.75));
 }
 
 @keyframes pulse-glow {
@@ -209,27 +224,33 @@ body {
   }
 }
 
-#next-button {
+/* Bottom-right button group */
+.action-buttons {
   position: fixed;
+  right: 40px;
   bottom: 40px;
-  right: 140px;
-  padding: 10px 20px;
-  background-color: white;
-  border-radius: 8px;
+  display: flex;
+  gap: 12px; /* minimal gap requested */
+  align-items: center;
+}
+
+#next-button {
+  padding: 12px 28px; /* increased size */
+  background-color: #89c15e; /* updated background */
+  color: white; /* white text */
+  border: 2px solid white; /* white border */
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  display: none;
+  display: none; /* controlled by JS */
 }
 
 #rules-button {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  padding: 10px 20px;
-  background-color: #8cc461;
+  padding: 12px 28px; /* increased size */
+  background-color: #89c15e; /* updated background */
   color: white;
-  border: 2px solid white;
-  border-radius: 8px;
+  border: 2px solid white; /* white border */
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -271,4 +292,12 @@ body {
   height: 120px;
   box-shadow: none; /* Remove outer shadow */
   transition: background-color 0.3s ease;
+}
+
+/* Score value override (placed last to ensure it applies) */
+#computer-score,
+#player-score {
+  font-size: 50px !important;   /* adjust as needed */
+  font-weight: 800 !important;
+  line-height: 1;
 }

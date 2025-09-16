@@ -18,10 +18,9 @@ choices.forEach(btn => {
         const result = getResult(player, computer);
         updateScores(result);
         showResult(player, computer, result);
-        if (result === 'win' && playerScore > computerScore) {
+        // Make Next button visible on any win, regardless of total scores
+        if (result === 'win') {
             nextBtn.style.display = 'inline-block';
-        } else {
-            nextBtn.style.display = 'none';
         }
     });
 });

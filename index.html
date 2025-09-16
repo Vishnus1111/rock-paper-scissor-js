@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css?v=2" />
+  <style>
+    /* Force score size/weight and ensure container can fit it */
+    #computer-score, #player-score { font-size: 6px; font-weight: 50; line-height: 1; }
+    .score-box { height: 110px; }
+  </style>
   <script src="index.js" defer></script>
   <title>Rock Paper Scissors</title>
 </head>
@@ -56,8 +61,10 @@
       <span id="close-rules" class="close-btn">✖</span>
     </div>
 
-    <button class="rules-button" id="rules-button">RULES</button>
-    <button class="next-button" id="next-button" style="display: none;">NEXT</button>
+    <div class="action-buttons">
+      <button class="rules-button" id="rules-button">RULES</button>
+      <button class="next-button" id="next-button" style="display: none;">NEXT</button>
+    </div>
   </div>
 </body>
 </html>

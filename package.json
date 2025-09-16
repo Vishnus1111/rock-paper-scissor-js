@@ -1,0 +1,18 @@
+{
+  "name": "rock-paper-scissor-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Rock Paper Scissors game",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishnus1111/rock-paper-scissor-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vishnus1111/rock-paper-scissor-js/issues"
+  },
+  "homepage": "https://github.com/vishnus1111/rock-paper-scissor-js#readme",
+  "scripts": {
+    "start": "cmd.exe /c start \"\" index.html",
+    "serve": "live-server --port=5500 --open=index.html"
+  }
+}
