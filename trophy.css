@@ -39,10 +39,11 @@ body {
   transform: translateX(-50%);
   padding: 12px 24px;
   background-color: white;
-  color: #8cc461;
-  border: none;
-  border-radius: 8px;
+  color: #000; /* black text */
+  border: calc(2px * 1.2) solid #89c15e; /* border width +20% */
+  border-radius: 12px; /* increased corner radius */
   font-weight: bold;
+  font-size: 18px; /* increase text size */
   cursor: pointer;
 }
 
@@ -56,6 +57,7 @@ body {
   border: 2px solid white;
   border-radius: 8px;
   font-weight: bold;
+  font-size: calc(16px + 5px); /* increase by ~5px */
   cursor: pointer;
 }
 
@@ -74,20 +76,21 @@ body {
 
 .close-btn {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -40px;
+  right: -30px; 
   background-color: red;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 15px; /* increased inner space by 5px */
   border-radius: 50%;
+  border: 6px solid #ffffff; /* increased border width to 6px */
   cursor: pointer;
-  font-size: 20px;
+  font-size: 26px; /* increased by additional 3px */
 }
 
 .win-heading {
   color: white;
-  font-size: 60px;
-  font-weight: bold;
+  font-size:210px;
+  font-weight: 850;
   letter-spacing: 10px;
   margin: 20px 0 10px;
   text-align: center;
@@ -95,8 +98,8 @@ body {
 
 .win-subheading {
   color: white;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 300px;
+  font-weight: 850;
   letter-spacing: 7px;
   text-align: center;
   margin: 0 0 40px;
