@@ -70,7 +70,7 @@ function showResult(player, computer, result) {
 
 
     const header = document.getElementById('result-header');
-    header.textContent = result === 'win' ? 'YOU WIN' : result === 'lose' ? 'YOU LOSE' : "IT'S A DRAW";
+    header.innerHTML = result === 'win' ? 'YOU WIN <br> AGAINST PC' : result === 'lose' ? 'YOU LOSE <br> AGAINST PC' : "TIE UP <br>";
 }
 
 function playAgain() {
